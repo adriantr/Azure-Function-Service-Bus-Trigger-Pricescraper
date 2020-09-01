@@ -12,7 +12,7 @@ namespace Adrian.Test
     public static class AdrianTesterQueueTrigger
     {
         [FunctionName("AdrianTesterQueueTrigger")]
-        public static async void Run([ServiceBusTrigger("prices", Connection = "adriantrzeciak_SERVICEBUS")] string myQueueItem, ILogger log, ExecutionContext context)
+        public static async void Run([ServiceBusTrigger("prices", Connection = "Azure_SERVICEBUS")] string myQueueItem, ILogger log, ExecutionContext context)
         {
             var data = JsonConvert.DeserializeObject<MessageContent>(myQueueItem);
 
